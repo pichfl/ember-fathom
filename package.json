@@ -6,9 +6,9 @@
     "ember-addon",
     "fathom"
   ],
-  "repository": "",
+  "repository": "https://github.com/pichfl/ember-fathom",
   "license": "MIT",
-  "author": "",
+  "author": "Florian Pichler <fp@ylk.gd>",
   "directories": {
     "doc": "doc",
     "test": "tests"
