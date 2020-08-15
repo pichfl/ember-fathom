@@ -35,17 +35,21 @@ export default class FathomService extends Service {
   init() {
     super.init(...arguments);
 
+    assert(
+      'ember-fathom needs to be configured in config/environment.js',
+      !!this.config
+    );
+
+    if (!this.config.site) {
+      return;
+    }
+
     this.injectFathom();
 
     addListener(this.router, 'routeDidChange', this._routeDidChange);
   }
 
   injectFathom() {
-    assert(
-      'ember-fathom needs to be configured in config/environment.js',
-      !!this.config
-    );
-
     const script = document.createElement('script');
 
     script.src = this.config.src || 'https://cdn.usefathom.com/script.js';
